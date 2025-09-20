@@ -214,7 +214,7 @@
   )
     (match existing-profile
       profile-data (get risk-score profile-data)
-      (+ base-risk (min u40 attribute-risk))
+      (+ base-risk (if (< attribute-risk u40) attribute-risk u40))
     )
   )
 )
